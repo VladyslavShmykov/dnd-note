@@ -5,7 +5,7 @@ function detectDoubleTapClosure() {
     return function detectDoubleTap(event) {
         const curTime = new Date().getTime();
         const tapLen = curTime - lastTap;
-        if (tapLen < 200 && tapLen > 0) {
+        if (tapLen < 300 && tapLen > 0) {
             event.preventDefault();
         } else {
             timeout = setTimeout(() => {
