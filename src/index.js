@@ -10,24 +10,55 @@ let gold = goldElement.innerText = g;
 let silver = silverElement.innerText = s;
 let copper = copperElement.innerText = c;
 
-function increment(type, value) {
-    switch (type) {
-        case 'g':
-            if (gold > 0 || value > 0) {
-                gold = goldElement.innerText = gold + value;
-            }
-            break
-        case 's':
-            if (silver > 0 || value > 0) {
-                silver = silverElement.innerText = silver + value;
-            }
-            break
-        case 'c':
-            if (copper > 0 || value > 0) {
-                copper = copperElement.innerText = copper + value;
-            }
-    }
+document.getElementById('goldEnlarger').addEventListener('click', () => {
+    gold = goldElement.innerText = gold + 1;
     localStorage.setItem('money', JSON.stringify({g: gold, s: silver, c: copper}));
-}
+});
+document.getElementById('goldReducer').addEventListener('click', () => {
+    if (gold > 0) {
+        gold = goldElement.innerText = gold - 1;
+        localStorage.setItem('money', JSON.stringify({g: gold, s: silver, c: copper}));
+    }
+});
 
-const experience = +localStorage.getItem('exp');
+document.getElementById('silverEnlarger').addEventListener('click', () => {
+    silver = silverElement.innerText = silver + 1;
+    localStorage.setItem('money', JSON.stringify({g: gold, s: silver, c: copper}));
+});
+document.getElementById('silverReducer').addEventListener('click', () => {
+    if (silver > 0) {
+        silver = silverElement.innerText = silver - 1;
+        localStorage.setItem('money', JSON.stringify({g: gold, s: silver, c: copper}));
+    }
+});
+
+document.getElementById('copperEnlarger').addEventListener('click', () => {
+    copper = copperElement.innerText = copper + 1;
+    localStorage.setItem('money', JSON.stringify({g: gold, s: silver, c: copper}));
+});
+document.getElementById('copperReducer').addEventListener('click', () => {
+    if (copper > 0) {
+        copper = copperElement.innerText = copper - 1;
+        localStorage.setItem('money', JSON.stringify({g: gold, s: silver, c: copper}));
+    }
+});
+
+let experience = +localStorage.getItem('exp') || 0;
+const expChanger = document.getElementById('exp-input');
+const expElement = document.getElementById('exp');
+const levelElement = document.getElementById('level');
+expElement.innerText = experience;
+levelElement.innerText = getLevel(experience);
+
+document.getElementById('exp-reset').addEventListener('click', () => {
+    expChanger.value = null;
+});
+document.getElementById('exp-confirm').addEventListener('click', () => {
+    if ((experience + +expChanger.value) >= 0 && (experience + +expChanger.value) <= 355_000) {
+        experience += +expChanger.value;
+        expElement.innerText = experience;
+        levelElement.innerText = getLevel(experience);
+        localStorage.setItem('exp', JSON.stringify(experience));
+        expChanger.value = null;
+    }
+});

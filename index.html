@@ -17,42 +17,52 @@
         <h2>Гроші</h2>
         <div class="money-container">
             <div>
-                <button onclick="increment('g', 1)" class="money-btn">
+                <button id="goldEnlarger" class="money-btn">
                     <span>+</span>
                 </button>
                 <span class="money-title">золото</span>
                 <p class="value" id="gold"></p>
-                <button onclick="increment('g', -1)" class="money-btn">
+                <button id="goldReducer" class="money-btn">
                     <span>-</span>
-                </button></div>
+                </button>
+            </div>
             <div>
-                <button onclick="increment('s', 1)" class="money-btn">
+                <button id="silverEnlarger" class="money-btn">
                     <span>+</span>
                 </button>
                 <span class="money-title">срібло</span>
                 <p class="value" id="silver"></p>
-                <button onclick="increment('s', -1)" class="money-btn">
+                <button id="silverReducer" class="money-btn">
                     <span>-</span>
-                </button></div>
+                </button>
+            </div>
             <div>
-                <button onclick="increment('c', 1)" class="money-btn">
+                <button id="copperEnlarger" class="money-btn">
                     <span>+</span>
                 </button>
                 <span class="money-title">мідяки</span>
                 <p class="value" id="copper"></p>
-                <button onclick="increment('c', -1)" class="money-btn">
+                <button id="copperReducer" class="money-btn">
                     <span>-</span>
-                </button></div>
+                </button>
+            </div>
         </div>
         <hr>
         <h2>Досвід</h2>
         <div class="exp-container">
-            <div>
-                <p id="exp"></p>
+            <div class="flex jcc">
+                <button id="exp-reset">&#10006;</button>
                 <label for="exp-input"></label>
-                <input id="exp-input">
+                <input type="number" id="exp-input">
+                <button id="exp-confirm">&#10003;</button>
             </div>
-            <p id="level"></p>
+            <div class="flex jcc">
+                <span>exp: </span>
+                <p id="exp"></p>
+                <span>|</span>
+                <span>lvl: </span>
+                <p id="level"></p>
+            </div>
         </div>
     </div>
     <script type="module" src="src/experience-table.js"></script>
