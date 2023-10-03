@@ -1,4 +1,24 @@
 import {getLevel} from "./experience-table.js";
+function detectDoubleTapClosure() {
+    let lastTap = 0;
+    let timeout;
+    return function detectDoubleTap(event) {
+        const curTime = new Date().getTime();
+        const tapLen = curTime - lastTap;
+        if (tapLen < 200 && tapLen > 0) {
+            event.preventDefault();
+        } else {
+            timeout = setTimeout(() => {
+                clearTimeout(timeout);
+            }, 500);
+        }
+        lastTap = curTime;
+    };
+}
+
+if (/webOS|iPhone/i.test(navigator.userAgent)) {
+    document.body.addEventListener('touchend', detectDoubleTapClosure());
+}
 
 const goldElement = document.getElementById('gold');
 const silverElement = document.getElementById('silver');
