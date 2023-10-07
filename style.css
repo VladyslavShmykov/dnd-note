@@ -5,6 +5,7 @@
 }
 
 body {
+    min-height: 95svh;
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
@@ -26,7 +27,7 @@ hr {
 }
 
 .main-container {
-    margin-top: 50px;
+    padding-top: 50px;
     display: grid;
 }
 
@@ -87,4 +88,46 @@ hr {
 #exp-input {
     font-size: 2.5em;
     width: 70%;
+}
+
+.inventory {
+    position: absolute;
+    background-color: #f0f0f0;
+    width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    top: 0;
+    right: 190vw;
+    transition: right 0.5s ease-out;
+}
+
+#add-inventory-btn {
+    font-size: 1em;
+    height: 3em;
+    width: 100%;
+}
+
+.opened-inv {
+    right: 0 !important;
+}
+
+.item-row {
+    font-size: 2em;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: 1fr 4fr 2fr;
+}
+
+.item-row > button {
+    height: 4em;
+}
+
+.item-row > span {
+    border-bottom: 1px solid black;
+}
+
+.item-row > p {
+    word-break: break-all;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
 }
