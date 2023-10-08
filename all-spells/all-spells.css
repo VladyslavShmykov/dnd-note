@@ -1,0 +1,40 @@
+.spells-bg {
+    background: rgb(255, 238, 148);
+    background: linear-gradient(90deg, rgba(255, 238, 148, 1) 0%, rgba(247, 220, 118, 0.4710477941176471) 29%, rgba(255, 238, 148, 1) 100%);
+}
+
+.spell-card {
+    border: 1px darkcyan dashed;
+    padding: 8px;
+}
+
+@media (max-width: 200px) {
+    .spell-card {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+/* When viewport width is between 201px and 400px */
+@media (min-width: 201px) and (max-width: 450px) {
+    .spell-card {
+        width: 50%;
+        max-width: 500px;
+    }
+}
+
+/* When viewport width is between 401px and 600px */
+@media (min-width: 451px) and (max-width: 600px) {
+    .spell-card {
+        width: 33.33%;
+        max-width: 500px;
+    }
+}
+
+/* When viewport width is greater than 600px */
+@media (min-width: 601px) {
+    .spell-card {
+        width: auto;
+        max-width: 500px;
+    }
+}

@@ -1,0 +1,164 @@
+:root {
+    --flex-gap: 16px;
+    --padding: 16px;
+    --padding-x: 16px;
+    --padding-y: 16px;
+    --padding-top: 16px;
+    --padding-right: 16px;
+    --padding-bottom: 16px;
+    --padding-left: 16px;
+    --margin: 16px;
+    --margin-x: 16px;
+    --margin-y: 16px;
+    --margin-top: 16px;
+    --margin-right: 16px;
+    --margin-bottom: 16px;
+    --margin-left: 16px;
+    --font-size: 16px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.gap {
+    gap: var(--flex-gap);
+}
+
+.padding {
+    padding: var(--padding);
+}
+
+.padding-x {
+    padding: var(--padding-x);
+}
+
+.padding-y {
+    padding: var(--padding-y);
+}
+
+.padding-top {
+    padding: var(--padding-top);
+}
+
+.padding-right {
+    padding: var(--padding-right);
+}
+
+.padding-bottom {
+    padding: var(--padding-bottom);
+}
+
+.padding-left {
+    padding: var(--padding-left);
+}
+
+.margin {
+    margin: var(--margin);
+}
+
+.margin-x {
+    margin: var(--margin-x);
+}
+
+.margin-y {
+    margin: var(--margin-y);
+}
+
+.margin-top {
+    margin: var(--margin-top);
+}
+
+.margin-right {
+    margin: var(--margin-right);
+}
+
+.margin-bottom {
+    margin: var(--margin-bottom);
+}
+
+.margin-left {
+    margin: var(--margin-left);
+}
+
+.text-black {
+    color: #000;
+}
+
+.font-size {
+    font-size: var(--font-size);
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.button {
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    background-color: #3498db; /* Button background color */
+    color: #ffffff; /* Button text color */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button hover effect */
+.button:hover {
+    background-color: #2980b9; /* Hovered background color */
+}
