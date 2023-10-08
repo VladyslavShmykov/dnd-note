@@ -3,6 +3,7 @@ import {Main} from "/main/main.js";
 import {getLevel} from "./experience-table.js";
 import {PlayerStorage} from "./player-storage.js";
 import {Dialog} from "/services/dialog.js";
+import {Inventory} from "./inventory.js";
 
 const storage = new PlayerStorage();
 
@@ -132,7 +133,7 @@ mainRef.innerHTML = main.toHTML();
 main.addEventListeners();
 
 document.getElementById('menu_list').addEventListener('click', (e) => {
-    const ids = ['main_container', 'itinerary_container', 'spells_container'];
+    const ids = ['main_container', 'itinerary_container', 'spells_container', 'inventory_container'];
 
     const target = e.target.getAttribute('data-show');
 
@@ -147,5 +148,10 @@ document.getElementById('menu_list').addEventListener('click', (e) => {
         }
 
         element.style.display = 'none';
-    })
+    });
+
+    if (target === 'inventory_container') {
+        document.getElementById('rows_with_inventary').innerHTML = '';
+        Inventory.fromAPI().toHTML();
+    }
 })

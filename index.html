@@ -25,11 +25,17 @@
 
     <button class="button" data-show="spells_container">All spells</button>
 
+    <button class="button" data-show="inventory_container">Інвентар</button>
 </div>
 
 <div id="main_container"></div>
 
 <div class="main-container" id="itinerary_container" style="display: none">
+    <header>
+        <button class="button" id="export-hero">Зберегти нотаток</button>
+        <button class="button" id="import-hero">Завантажити нотаток</button>
+    </header>
+
     <h2>Гроші</h2>
     <div class="money-container">
         <div>
@@ -63,6 +69,7 @@
             </button>
         </div>
     </div>
+
     <hr>
     <h2>Досвід</h2>
     <div class="exp-container">
@@ -84,7 +91,14 @@
 
 <div id="spells_container" style="display: none"></div>
 
-<script src="src/experience-table.js" type="module"></script>
+<div id="inventory_container" style="display: none">
+    <div class="inventory" id="inventory">
+        <div id="rows_with_inventary"></div>
+        <button id="add-inventory-btn">Додати</button>
+        <button class="button" id="save_inventory">Зберегти</button>
+    </div>
+</div>
+
 <script src="src/index.js" type="module"></script>
 
 <script src="all-spells/all-spells.js" type="module"></script>
@@ -100,5 +114,10 @@
 <script src="services/dialog.js" type="module"></script>
 
 <script src="src/player-storage.js" type="module"></script>
+
+<script type="module" src="src/export-import.js"></script>
+<script type="module" src="src/experience-table.js"></script>
+<script type="module" src="src/touch-events.js"></script>
+<script type="module" src="src/inventory.js"></script>
 </body>
 </html>
