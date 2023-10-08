@@ -2,70 +2,103 @@
 <html lang="ua">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="img/logo.svg">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="img/logo.svg" rel="icon" type="image/x-icon">
+    <link href="style.css" rel="stylesheet">
+    <link href="utility.css" rel="stylesheet">
+    <link href="all-spells/all-spells.css" rel="stylesheet">
+    <link href="main/main.css" rel="stylesheet">
+    <link href="services/dialog.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <title>dnd note</title>
 </head>
 <body>
-    <div class="main-container">
-        <h2>Гроші</h2>
-        <div class="money-container">
-            <div>
-                <button id="goldEnlarger" class="money-btn">
-                    <span>+</span>
-                </button>
-                <span class="money-title">золото</span>
-                <p class="value" id="gold"></p>
-                <button id="goldReducer" class="money-btn">
-                    <span>-</span>
-                </button>
-            </div>
-            <div>
-                <button id="silverEnlarger" class="money-btn">
-                    <span>+</span>
-                </button>
-                <span class="money-title">срібло</span>
-                <p class="value" id="silver"></p>
-                <button id="silverReducer" class="money-btn">
-                    <span>-</span>
-                </button>
-            </div>
-            <div>
-                <button id="copperEnlarger" class="money-btn">
-                    <span>+</span>
-                </button>
-                <span class="money-title">мідяки</span>
-                <p class="value" id="copper"></p>
-                <button id="copperReducer" class="money-btn">
-                    <span>-</span>
-                </button>
-            </div>
+
+<div class="flex gap padding flex-wrap" id="menu_list" style="--padding: 8px">
+    <button class="button" data-show="main_container">General info</button>
+
+    <button class="button" data-show="itinerary_container">Items</button>
+
+    <button class="button" data-show="spells_container">All spells</button>
+
+</div>
+
+<div id="main_container"></div>
+
+<div class="main-container" id="itinerary_container" style="display: none">
+    <h2>Гроші</h2>
+    <div class="money-container">
+        <div>
+            <button class="money-btn" id="goldEnlarger">
+                <span>+</span>
+            </button>
+            <span class="money-title">золото</span>
+            <p class="value" id="gold"></p>
+            <button class="money-btn" id="goldReducer">
+                <span>-</span>
+            </button>
         </div>
-        <hr>
-        <h2>Досвід</h2>
-        <div class="exp-container">
-            <div class="flex jcc">
-                <button id="exp-reset">&#10006;</button>
-                <label for="exp-input"></label>
-                <input type="number" id="exp-input">
-                <button id="exp-confirm">&#10003;</button>
-            </div>
-            <div class="flex jcc">
-                <span>exp: </span>
-                <p id="exp"></p>
-                <span>|</span>
-                <span>lvl: </span>
-                <p id="level"></p>
-            </div>
+        <div>
+            <button class="money-btn" id="silverEnlarger">
+                <span>+</span>
+            </button>
+            <span class="money-title">срібло</span>
+            <p class="value" id="silver"></p>
+            <button class="money-btn" id="silverReducer">
+                <span>-</span>
+            </button>
+        </div>
+        <div>
+            <button class="money-btn" id="copperEnlarger">
+                <span>+</span>
+            </button>
+            <span class="money-title">мідяки</span>
+            <p class="value" id="copper"></p>
+            <button class="money-btn" id="copperReducer">
+                <span>-</span>
+            </button>
         </div>
     </div>
-    <script type="module" src="src/experience-table.js"></script>
-    <script type="module" src="src/index.js"></script>
+    <hr>
+    <h2>Досвід</h2>
+    <div class="exp-container">
+        <div class="flex justify-content-center">
+            <button id="exp-reset">&#10006;</button>
+            <label for="exp-input"></label>
+            <input id="exp-input" type="number">
+            <button id="exp-confirm">&#10003;</button>
+        </div>
+        <div class="flex justify-content-center">
+            <span>exp: </span>
+            <p id="exp"></p>
+            <span>|</span>
+            <span>lvl: </span>
+            <p id="level"></p>
+        </div>
+    </div>
+</div>
+
+<div id="spells_container" style="display: none"></div>
+
+<script src="src/experience-table.js" type="module"></script>
+<script src="src/index.js" type="module"></script>
+
+<script src="all-spells/all-spells.js" type="module"></script>
+<script src="all-spells/class-spells.js" type="module"></script>
+<script src="spells/bard-spells.js" type="module"></script>
+<script src="spells/druid-spells.js" type="module"></script>
+<script src="spells/ranger-spells.js" type="module"></script>
+<script src="spells/priest-spells.js" type="module"></script>
+<script src="spells/racial-spells.js" type="module"></script>
+
+<script src="main/main.js" type="module"></script>
+
+<script src="services/dialog.js" type="module"></script>
+
+<script src="src/player-storage.js" type="module"></script>
 </body>
 </html>

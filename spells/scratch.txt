@@ -1,0 +1,64 @@
+{
+    name: '',
+    level: 0,
+    levelDescription: '',
+    castingTime: '',
+    distance: '',
+    components: '',
+    duration: '',
+    description: ''
+}, {
+    name: '',
+    level: 0,
+    levelDescription: '',
+    castingTime: '',
+    distance: '',
+    components: '',
+    duration: '',
+    description: ''
+}, {
+    name: '',
+    level: 0,
+    levelDescription: '',
+    castingTime: '',
+    distance: '',
+    components: '',
+    duration: '',
+    description: '',
+}, {
+    name: '',
+    level: 0,
+    levelDescription: '',
+    castingTime: '',
+    distance: '',
+    components: '',
+    duration: '',
+    description: ''
+}, {
+    name: '',
+    level: 0,
+    levelDescription: '',
+    castingTime: '',
+    distance: '',
+    components: '',
+    duration: '',
+    description: ''
+}, {
+    name: '',
+    level: 0,
+    levelDescription: '',
+    castingTime: '',
+    distance: '',
+    components: '',
+    duration: '',
+    description: ''
+}, {
+    name: '',
+    level: 0,
+    levelDescription: '',
+    castingTime: '',
+    distance: '',
+    components: '',
+    duration: '',
+    description: ''
+},
