@@ -1,9 +1,9 @@
-import {BardSpells} from "/spells/bard-spells.js";
-import {DruidSpells} from "/spells/druid-spells.js";
-import {RangerSpells} from "/spells/ranger-spells.js";
-import {PriestSpells} from "/spells/priest-spells.js";
+import {BardSpells} from "/src/spells/bard-spells.js";
+import {DruidSpells} from "/src/spells/druid-spells.js";
+import {RangerSpells} from "/src/spells/ranger-spells.js";
+import {PriestSpells} from "/src/spells/priest-spells.js";
 import {Spell} from "/all-spells/class-spells.js";
-import {RacialSpells} from "/spells/racial-spells.js";
+import {RacialSpells} from "/src/spells/racial-spells.js";
 
 export class Main {
     name;
@@ -204,7 +204,7 @@ export class Main {
 
     addListenersInsideDialog() {
         this.getSpellsByClass().filter((s) => s.description).forEach((s) => {
-            document.getElementById(s.name)?.addEventListener('click', (e) => {
+            document.getElementById(s.name)?.addEventListener('click', () => {
                 const currentSpells = this.selectedSpells.find((group) => group.level === +s.level).spells;
                 if (currentSpells.some((cs) => cs.name === s.name)) return;
 
