@@ -1,9 +1,9 @@
 import {AllSpells} from "/all-spells/all-spells.js";
-import {Main} from "/main/main.js";
 import {getLevel} from "./experience-table.js";
 import {PlayerStorage} from "./player-storage.js";
-import {Dialog} from "/services/dialog.js";
 import {Inventory} from "./inventory.js";
+import {Dialog} from "./services/dialog.js";
+import {Main} from "./main/main.js";
 
 const storage = new PlayerStorage();
 
