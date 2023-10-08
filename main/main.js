@@ -44,22 +44,22 @@ export class Main {
         </div>
         
         <div>
-            <select id="${this.id + 'selectClass'}">
+            <select id="${this.id + 'selectRAce'}">
             <option value="">--Please choose an option--</option>
-                ${this.classTypes.map((_class) => `
+                ${this.raceTypes.map((_class) => `
                     <option class="text-capitalize" value="${_class}" 
-                        ${this.playerClass === _class ? 'selected' : ''}>${_class}
+                        ${this.race === _class ? 'selected' : ''}>${_class}
                     </option>
                 `).join(' ')}
             </select>
         </div>
         
         <div>
-            <select id="${this.id + 'selectRAce'}">
+            <select id="${this.id + 'selectClass'}">
             <option value="">--Please choose an option--</option>
-                ${this.raceTypes.map((_class) => `
+                ${this.classTypes.map((_class) => `
                     <option class="text-capitalize" value="${_class}" 
-                        ${this.race === _class ? 'selected' : ''}>${_class}
+                        ${this.playerClass === _class ? 'selected' : ''}>${_class}
                     </option>
                 `).join(' ')}
             </select>
@@ -93,13 +93,15 @@ export class Main {
             return `<div class="mt">You didnt select a character or you dont have Class SPELLS :(((</div>`
         }
 
+        const racial = RacialSpells?.[this.race] || [];
+
         return this.selectedSpells.map((selected) => `
         <div>${selected.level} УРОВЕНЬ</div> 
         
         <div class="flex flex-wrap gap align-items-center" style="--flex-gap: 4px">
         
             ${selected.level === 0 ? `
-                ${RacialSpells[this.race].map((s) => Spell.fromApi(s).toHTML()).join(' ')}
+                ${racial.map((s) => Spell.fromApi(s).toHTML()).join(' ')}
             ` : ''}
         
             ${selected.spells.map((s) => {
