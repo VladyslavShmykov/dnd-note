@@ -2,7 +2,7 @@ import {RangerSpells} from "/src/spells/ranger-spells.js";
 import {BardSpells} from "/src/spells/bard-spells.js";
 import {DruidSpells} from "/src/spells/druid-spells.js";
 import {PriestSpells} from "/src/spells/priest-spells.js";
-import {ClassSpells} from "/all-spells/class-spells.js";
+import {ClassSpells} from "/src/all-spells/class-spells.js";
 
 export class AllSpells {
     bardSpells = ClassSpells.fromApi({

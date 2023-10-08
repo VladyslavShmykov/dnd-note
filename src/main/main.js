@@ -2,7 +2,7 @@ import {BardSpells} from "/src/spells/bard-spells.js";
 import {DruidSpells} from "/src/spells/druid-spells.js";
 import {RangerSpells} from "/src/spells/ranger-spells.js";
 import {PriestSpells} from "/src/spells/priest-spells.js";
-import {Spell} from "/all-spells/class-spells.js";
+import {Spell} from "/src/all-spells/class-spells.js";
 import {RacialSpells} from "/src/spells/racial-spells.js";
 
 export class Main {
