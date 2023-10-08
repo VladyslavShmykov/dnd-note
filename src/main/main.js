@@ -1,9 +1,9 @@
-import {BardSpells} from "/src/spells/bard-spells.js";
-import {DruidSpells} from "/src/spells/druid-spells.js";
-import {RangerSpells} from "/src/spells/ranger-spells.js";
-import {PriestSpells} from "/src/spells/priest-spells.js";
-import {Spell} from "/src/all-spells/class-spells.js";
-import {RacialSpells} from "/src/spells/racial-spells.js";
+import {RacialSpells} from "../spells/racial-spells.js";
+import {Spell} from "../all-spells/class-spells.js";
+import {BardSpells} from "../spells/bard-spells.js";
+import {DruidSpells} from "../spells/druid-spells.js";
+import {RangerSpells} from "../spells/ranger-spells.js";
+import {PriestSpells} from "../spells/priest-spells.js";
 
 export class Main {
     name;
@@ -135,6 +135,7 @@ export class Main {
           ${pickableSpells.map((s) => {
             return `<div class="d-flex" id="${s.name}" data-id="${s.name}">
                        ${currentSpells.some((cs) => cs.name === s.name) ? '<div class="w-100 p fw-500" style="background: green; color: #fff;">Already selected</div>' : ''}
+
                        ${Spell.fromApi(s).toHTML()}
                     </div>`
         }).join(' ')}
