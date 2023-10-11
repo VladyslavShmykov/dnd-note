@@ -8,7 +8,12 @@
     padding: 8px;
 }
 
-@media (max-width: 200px) {
+.in-dialog .spell-card {
+    border: none;
+    width: 100% !important;
+}
+
+@media (max-width: 300px) {
     .spell-card {
         width: 100%;
         max-width: 500px;
@@ -16,7 +21,7 @@
 }
 
 /* When viewport width is between 201px and 400px */
-@media (min-width: 201px) and (max-width: 450px) {
+@media (min-width: 401px) and (max-width: 750px) {
     .spell-card {
         width: 50%;
         max-width: 500px;
@@ -24,7 +29,7 @@
 }
 
 /* When viewport width is between 401px and 600px */
-@media (min-width: 451px) and (max-width: 600px) {
+@media (min-width: 651px) and (max-width: 1000px) {
     .spell-card {
         width: 33.33%;
         max-width: 500px;
@@ -32,9 +37,9 @@
 }
 
 /* When viewport width is greater than 600px */
-@media (min-width: 601px) {
+@media (min-width: 1001px) {
     .spell-card {
         width: auto;
-        max-width: 500px;
+        max-width: 400px;
     }
 }
