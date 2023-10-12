@@ -128,17 +128,19 @@ export class Main {
         const pickableSpells = this.getSpellsByClass().filter((s) => s.level === +level && s.description);
         const currentSpells = this.selectedSpells.find((group) => group.level === +level).spells;
 
-        return `<div class="p flex flex-wrap justify-content-center cursor-pointer position-relative" id="container-spell-add1">
-            
-          <button id="dialog-closing-button-main-11" class="button position-absolute" style="top: 10px; right: 10px">X</button>  
+        const data = pickableSpells.length ? `${pickableSpells.map((s) => {
+            return `<div class="d-flex spell-card in-dialog" id="${s.name}" data-id="${s.name}">
+            ${currentSpells.some((cs) => cs.name === s.name) ? '<div class="w-100 p fw-500" style="background: green; color: #fff;">Already selected</div>' : ''}
+            ${Spell.fromApi(s).toHTML()}
+            </div>`
+            }).join(' ')}` : `<div class="w-100 flex justify-content-center align-items-center">You have no spells for this level</div>`
 
-          ${pickableSpells.map((s) => {
-            return `<div class="d-flex" id="${s.name}" data-id="${s.name}">
-                       ${currentSpells.some((cs) => cs.name === s.name) ? '<div class="w-100 p fw-500" style="background: green; color: #fff;">Already selected</div>' : ''}
-                       ${Spell.fromApi(s).toHTML()}
-                    </div>`
-        }).join(' ')}
-                </div>`
+        return ` 
+        <button id="dialog-closing-button-main-11" class="button position-sticky" style="top: 10px; left: 90%">X</button>  
+
+        <div class="p flex flex-wrap justify-content-center cursor-pointer" id="container-spell-add1">    
+          ${data}
+        </div>`
     }
 
     getSpellsByClass() {

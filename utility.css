@@ -97,6 +97,10 @@
     margin: var(--margin-left);
 }
 
+.ms-auto {
+    margin-left: auto;
+}
+
 .text-black {
     color: #000;
 }
@@ -143,6 +147,10 @@
 
 .position-absolute {
     position: absolute;
+}
+
+.position-sticky {
+    position: sticky;
 }
 
 .button {
