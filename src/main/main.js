@@ -98,18 +98,18 @@ export class Main {
         return this.selectedSpells.map((selected) => `
         <div>${selected.level} УРОВЕНЬ</div> 
         
-        <div class="flex flex-wrap gap align-items-center" style="--flex-gap: 4px">
+        <div class="flex flex-wrap gap align-items-center in-dialog" style="--flex-gap: 4px">
         
             ${selected.level === 0 ? `
                 ${racial.map((s) => Spell.fromApi(s).toHTML()).join(' ')}
             ` : ''}
         
             ${selected.spells.map((s) => {
-            return `<div>
+            return `<div class="spell-card">
                        ${s.nonRemovable ? '' : `<div><button class="button" id="remove-${s.name}">Click to remove</button></div>`}
                        ${Spell.fromApi(s).toHTML()}
                     </div>`
-        }).join(' ')}
+            }).join(' ')}
             
             <div class="flex justify-content-center align-items-center cursor-pointer">
             

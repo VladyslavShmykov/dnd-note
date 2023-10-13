@@ -40,6 +40,6 @@
 @media (min-width: 1001px) {
     .spell-card {
         width: auto;
-        max-width: 400px;
+        max-width: 600px;
     }
 }
