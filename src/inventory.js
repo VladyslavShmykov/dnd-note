@@ -1,4 +1,4 @@
-import { itemsElem } from "./touch-events.js";
+export const itemsElem = document.getElementById('inventory').children.item(0);
 
 export class Inventory {
     items;
